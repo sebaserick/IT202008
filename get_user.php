@@ -15,19 +15,19 @@ try{
 	echo "Should have connected";
 	
 
-	 $stmt = $db->prepare("INSERT INTO `Users`
-                        (email) VALUES
-                        (:email)");
+	 $stmt = $db->prepare("SELECT * from `Users` where id = :id");
     
-        $params = array(":email"=> 'Erickb@bob.com');
+        $params = array(":id"=> '1');
         $stmt->execute($params);
+	$results = $stmt->fetch(PDO::FETCH_ASSOC);
         echo "<pre>" . var_export(
                         $stmt->errorInfo(), true) . "</pre>";
-	echo var_export($stmt->errorInfo(), true);
+	echo var_export($results, true);
 }
 catch(Exception $e){
 	echo $e->getMessage();
 	exit("It didn't work");
 }
 
-?>
+?>y
+
