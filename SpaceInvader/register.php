@@ -25,7 +25,7 @@ if(        isset($_POST['email'])
                 $connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
                 try {
                         $db = new PDO($connection_string, $dbuser, $dbpass);
-                        $stmt = $db->prepare("INSERT INTO `Users3`
+                        $stmt = $db->prepare("INSERT INTO `Space Invaders`
                                                         (email, password) VALUES
                                                         (:email, :password)");
                         $email = $_POST['email'];
@@ -82,7 +82,8 @@ if(        isset($_POST['email'])
                                 let pe = document.getElementById("password_error");
                                 if(form.password.value.length == 0 || form.confirm.value.length == 0){
                                         //alert("You must enter both a password and confirmation password");
-                                        pe.innerText = "You must enter both a password and a confirm passwor$                                        return false;
+                                        pe.innerText = "You must enter both a password and a confirm password";                    
+                                        return false;
                                 }
                                 if(form.password.value != form.confirm.value){
                                         //alert("Uhh you made a typo");
@@ -99,7 +100,9 @@ if(        isset($_POST['email'])
         </style>
         <body onload="findFormsOnLoad();">
                 <!-- This is how you comment -->
-                <form name="regform" id="myForm" method="POST"                                                                                       onsubmit="return doValidations(this)">                                                       <div style="position: absolute; left: 150; top: 30; ">
+                <form name="regform" id="myForm" method="POST"                                                 
+                                      onsubmit="return doValidations(this)"> 
+                                <div style="position: absolute; left: 150; top: 30; ">
                                 <label for="email">Email: </label><br>
                                 <input type="email" id="email" name="email" placeholder="Enter Email"/>
                                 <span id="email_error"></span>
@@ -107,11 +110,12 @@ if(        isset($_POST['email'])
                         <div style = "position: absolute; left: 150; top: 100;">
                                 <label for="pass">Password: </label><br>
 
-                                <input type="password" id="pass" name="password" placeholder="Enter password$
+                                <input type="password" id="pass" name="password" placeholder="Enter password"/>
                         </div>
                         <div style = "position: absolute; left: 150; top: 170;">
                         <label for="conf">Confirm Password: </label><br>
-                                <input type="password" id="conf" name="confirm" placeholder="Confirm Passwor$                                <span id="password_error"></span>
+                                <input type="password" id="conf" name="confirm"   
+                                <span id="password_error"></span>
                         </div>
                         <div style= "position: absolute; left:150; top: 210;">
                                 <div>&nbsp;</div>

@@ -1,5 +1,26 @@
+<html>
+        <head>
+                <title>My Space Invaders - Login</title>
+        </head>
+        <body>
+                <style>
+                body {
+                Font-size: 1.90em;
+                font-family; 'Impact';
+                Background-image: url('https://i.redd.it/4qmgdl4boj411.png');
+                color: white;
+                </style>
+                <form name="loginform" id="myForm" method="POST">
+                        <label for="email">Email: </label>
+                        <input type="email" id="email" name="email" placeholder="Enter Email"/>
+                        <label for="pass">Password: </label>
+                        <input type="password" id="pass" name="password" placeholder="Enter password"/>
+                        <input type="submit" value="Login"/>
+                </form>
+        </body>
+</html>
 
- "</pre>";
+<?php
 ini_set('display_errors',1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -17,7 +38,7 @@ if(isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['passwor
         $connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
         try {
                 $db = new PDO($connection_string, $dbuser, $dbpass);
-                $stmt = $db->prepare("SELECT id, email, password from `Users3` where email = :email LIMIT 1");
+                $stmt = $db->prepare("SELECT id, email, password from `Space Invaders` where email = :email LIMIT 1");
 
         $params = array(":email"=> $email);
         $stmt->execute($params);
@@ -56,27 +77,6 @@ if(isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['passwor
         }
 }
 ?>
-<html>
-        <head>
-                <title>My Space Invaders - Login</title>
-        </head>
-        <body>
-                <style>
-                body {
-                Font-size: 1.90em;
-                font-family; 'Impact';
-                Background-image: url('https://i.redd.it/4qmgdl4boj411.png');
-                color: white;
-                </style>
-                <form name="loginform" id="myForm" method="POST">
-                        <label for="email">Email: </label>
-                        <input type="email" id="email" name="email" placeholder="Enter Email"/>
-                        <label for="pass">Password: </label>
-                        <input type="password" id="pass" name="password" placeholder="Enter password"/>
-                        <input type="submit" value="Login"/>
-                </form>
-        </body>
-</html>
 
 
 
