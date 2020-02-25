@@ -43,11 +43,15 @@ if(	   isset($_POST['email'])
 ?>
 <html>
 	<head>
-		<title>My Project - Register</title>
+		<title>"Space Invaders" - Register</title>
 		<style>
+		body {
+		Font-size: 1.90em;
+  		 font-family: 'Impact';  
+		}
 		body{
-			background-color: black;
-			background-image: url('https://media.giphy.com/media/W1Z8qTU2r9DvRis4z0/giphy.gif');
+			background-color: white;
+			background-image: url('https://i.redd.it/4qmgdl4boj411.png');
 			color: white;
 		}
 		</style>
@@ -90,26 +94,34 @@ if(	   isset($_POST['email'])
 			}
 		</script>
 	</head>
+	<style>
+	input{width: 230px; height: 20px; font-size:12pt;}
+	</style>
 	<body onload="findFormsOnLoad();">
 		<!-- This is how you comment -->
 		<form name="regform" id="myForm" method="POST"
 					onsubmit="return doValidations(this)">
-			<div>
+			<div style="position: absolute; left: 150; top: 30; ">
 				<label for="email">Email: </label><br>
 				<input type="email" id="email" name="email" placeholder="Enter Email"/>
 				<span id="email_error"></span>
 			</div>
-			<div>
+			<div style = "position: absolute; left: 150; top: 100;">
 				<label for="pass">Password: </label><br>
+					
 				<input type="password" id="pass" name="password" placeholder="Enter password"/>
+
 			</div>
-			<div>
+			<div style = "position: absolute; left: 150; top: 170;">
 			<label for="conf">Confirm Password: </label><br>
-				<input type="password" id="conf" name="confirm"/>
+				<input type="password" id="conf" name="confirm" placeholder="Confirm Password"/>
 				<span id="password_error"></span>
 			</div>
-			<div>
+			<div style= "position: absolute; left:150; top: 210;">
 				<div>&nbsp;</div>
+				<style>
+				input type="submit"{font-size: 12pt}
+				</style>
 				<input type="submit" value="Register"/>
 			</div>
 		</form>
@@ -118,3 +130,4 @@ if(	   isset($_POST['email'])
 		<?php endif;?>
 	</body>
 </html>
+
