@@ -26,5 +26,8 @@ if (ini_get("session.use_cookies")) {
                 color: white;
         }
         </style>
-
+	<body>
+		<p>Please follow <a href= "https://web.njit.edu/~em288/SpaceInvaders/SpaceInvader/login.php">this link</a>.</p>
+	</body>
+</html>  
 
