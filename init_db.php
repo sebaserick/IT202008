@@ -1,5 +1,6 @@
+  
 <?php
-
+//this is check_db.php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -13,10 +14,11 @@ $connection_string = "mysql:host=$dbhost;dbname=$dbdatabase;charset=utf8mb4";
 try{
 	$db = new PDO($connection_string, $dbuser, $dbpass);
 	echo "Should have connected";
-	$stmt = $db->prepare("CREATE TABLE `Test` (
+	$stmt = $db->prepare("CREATE TABLE `Users` (
 				`id` int auto_increment not null,
-				`username` varchar(30) not null unique,
-				`pin` int default 0,
+				`email` varchar(100) not null unique,
+				`created` timestamp default current_timestamp,
+				`modified` timestamp default current_timestamp on update current_timestamp,
 				PRIMARY KEY (`id`)
 				) CHARACTER SET utf8 COLLATE utf8_general_ci"
 			);
