@@ -21,8 +21,6 @@
 <embed height="160" type="audio/mpeg" width="244" src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Music_for_Video/Komiku/Poupis_incredible_adventures_/Komiku_-_27_-_Tetros_Arcade_Cabinet.mp3"
 	 volume="60" loop="false" autostart="false" />
 
-<p>Click here for <a href= "https://web.njit.edu/~em288/Folder1/SpaceInvader/game.html"> "Normal Mode"</a>.</p>
-<p>Click here for <a href= "https://web.njit.edu/~em288/SpaceInvaders/SpaceInvader/login.php">"Hard Mode"</a>.</p>
 
 
         </body>
@@ -63,14 +61,15 @@ if(isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['passwor
                                 $roles = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 if(!$roles){
                                         $roles = array();
-                                }
-                               
 					 $user = array(
                                         "id" => $id,
                                         "email"=>$result['email'],
                                         "roles"=> $roles);
                                 $_SESSION['user'] = $user;
                                 echo "Session: <pre>" . var_export($_SESSION, true) . "</pre>";
+
+
+				}
                         }
                         else{
                                 echo "Failed to login, invalid password";
@@ -87,5 +86,7 @@ if(isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['passwor
 }
 ?>
 
+<p>Click here for <a href= "https://web.njit.edu/~em288/Folder1/SpaceInvader/colorsNormal.php"> "Normal Mode"</a>.</p>
+<p>Click here for <a href= "https://web.njit.edu/~em288/Folder1/SpaceInvader/colors.php">"Hard Mode"</a>.</p>
 
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-	  <title>Spaceships "Hard"</title>
+	  <title>Spaceships</title>
 </head>
 
 <body>
@@ -10,11 +10,7 @@
 	font-family; 'Impact';
 	color: white;
 	</style>
-
-
 <style>
-
-
 .block {
   display: block;
   width: 100%;
@@ -26,15 +22,10 @@
   cursor: pointer;
   text-align: center;
 }
-
 .block:hover {
   background-color: #ddd;
   color: black;
-
 </style>
-
-
-
 <style>
 p {
   display: block;
@@ -45,37 +36,24 @@ p {
   color: #ffff66;
 }
 </style>
-
-
-
-
 <body>
-
-
 <html>
-
 <body>
-
 <h1>Pick Your Spaceship</h1>
 <p> This mode has more enemies! </p>
 <p> You are slower in this mode and your enemies are faster! </p>
 <p> Enemies take more damage!</p>
+   
+
 
     <button class="block" onClick="redirect()">White Spaceship</button>
-
     <script type="text/javascript">
     function redirect()
     {
-    window.location.href="https://web.njit.edu/~em288/Folder1/SpaceInvader/WhiteHard.html";
+    window.location.href="https://web.njit.edu/~em288/Folder1/SpaceInvader/White.html";
     }
     </script>
-
-
-
-
-<button class ="block" onclick="location.href='https://web.njit.edu/~em288/Folder1/SpaceInvader/Hard.html'" type="button">
+<button class ="block" onclick="location.href='https://web.njit.edu/~em288/Folder1/SpaceInvader/game.html'" type="button">
          PurpleSpaceship</button>
-
-<p>Please follow <a href= "https://web.njit.edu/~em288/Folder1/SpaceInvader/colorsNormal.php">this link if you want normal mode</a>.</p>
 
 </html>
