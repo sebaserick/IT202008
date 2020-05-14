@@ -40,9 +40,6 @@ p {
 <html>
 <body>
 <h1>Pick Your Spaceship</h1>
-<p> This mode has more enemies! </p>
-<p> You are slower in this mode and your enemies are faster! </p>
-<p> Enemies take more damage!</p>
    
 
 
@@ -50,7 +47,7 @@ p {
     <script type="text/javascript">
     function redirect()
     {
-    window.location.href="https://web.njit.edu/~em288/Folder1/SpaceInvader/White.html";
+    window.location.href="https://web.njit.edu/~em288/Folder1/SpaceInvader/whiteSpaceship.html";
     }
     </script>
 <button class ="block" onclick="location.href='https://web.njit.edu/~em288/Folder1/SpaceInvader/game.html'" type="button">

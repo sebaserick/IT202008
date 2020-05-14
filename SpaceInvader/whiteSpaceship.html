@@ -11,7 +11,7 @@
 		width: 1200px;
 		}
 	      #hero{
-		background-image: url('https://opengameart.org/sites/default/files/styles/thumbnail/public/DurrrSpaceShip_0.png');
+		background-image: url('https://pngimage.net/wp-content/uploads/2018/06/galaga-ship-png-2-200x200.png');
 		height: 50px;
 		width: 50px;
 		background-size: contain;
@@ -52,13 +52,16 @@
 			
 
 	</style>
+
+<meta http-equiv="refresh" content="36">
+
 	</head>	
         
 </html>
 
 <body>
 	
-
+<p> Click here to <a href= "https://web.njit.edu/~em288/Folder1/SpaceInvader/logout.php">Logout</a>.</p>
 
 
 
@@ -69,7 +72,14 @@
 		<div id="enemies"></div>
 	</div>
 
-	<script> 
+
+
+
+ 
+
+	<script>
+
+
 
 
 
@@ -164,20 +174,23 @@
         }
 
 	function hitDetection(){
-		  for (var enemy = 0; enemy < enemies.length; enemy++) {
+		  for (var enemie = 0; enemie < enemies.length; enemie++) {
                 for (var missile = 0; missile < missiles.length; missile++) {
                     if ( 
-                        missiles[missile].left >= enemies[enemy].left  &&
-                        missiles[missile].left <= (enemies[enemy].left + 50)  &&
-                        missiles[missile].top <= (enemies[enemy].top + 50)  &&
-                        missiles[missile].top >= enemies[enemy].top
+                        missiles[missile].left >= enemies[enemie].left  &&
+                        missiles[missile].left <= (enemies[enemie].left + 50)  &&
+                        missiles[missile].top <= (enemies[enemie].top + 50)  &&
+                        missiles[missile].top >= enemies[enemie].top
                     ) {
-                        enemies.splice(enemy, 1);
+                        enemies.splice(enemie, 1);
                         missiles.splice(missile, 1);
                     }
                 }
             }
         }
+
+
+		
 
 	function gameLoop(){
 		setTimeout(gameLoop, 100)
@@ -189,8 +202,22 @@
 	}	
 	gameLoop();	
 
-	
+
+
+
+
+
 
 	</script>
 </body>
+
+
+
+
+
+
+
 </html>
+
+
+
