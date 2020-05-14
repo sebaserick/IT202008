@@ -33,17 +33,33 @@
 
 </style>
 
+
+
+<style>
+p {
+  display: block;
+  margin-top: 6em;
+  margin-bottom: 1em;
+  margin-left: 5em;
+  margin-right: 0;
+  color: #ffff66;
+}
+</style>
+
+
+
+
 <body>
 
-
-  
 
 <html>
 
 <body>
 
 <h1>Pick Your Spaceship</h1>
- 
+<p> This mode has more enemies! </p>
+<p> You are slower in this mode and your enemies are faster! </p>
+<p> Enemies take more damage!</p>
 
     <button class="block" onClick="redirect()">White Spaceship</button>
 
@@ -60,5 +76,6 @@
 <button class ="block" onclick="location.href='https://web.njit.edu/~em288/Folder1/SpaceInvader/Hard.html'" type="button">
          PurpleSpaceship</button>
 
+<p>Please follow <a href= "">this link if you want normal mode</a>.</p>
 
 </html>
