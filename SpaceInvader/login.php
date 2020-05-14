@@ -17,6 +17,11 @@
                         <input type="password" id="pass" name="password" placeholder="Enter password"/>
                         <input type="submit" value="Login"/>
                 </form>
+
+<embed height="160" type="audio/mpeg" width="244" src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Music_for_Video/Komiku/Poupis_incredible_adventures_/Komiku_-_27_-_Tetros_Arcade_Cabinet.mp3"
+	 volume="60" loop="false" autostart="false" />
+
+
         </body>
 </html>
 
@@ -56,7 +61,8 @@ if(isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['passwor
                                 if(!$roles){
                                         $roles = array();
                                 }
-                                $user = array(
+                               
+					 $user = array(
                                         "id" => $id,
                                         "email"=>$result['email'],
                                         "roles"=> $roles);

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>My Space Invaders - Login</title>
+        
+        
+	<style>
+              #background{
+	        Background-image: url('https://i.redd.it/4qmgdl4boj411.png');
+		height: 800px;
+		width: 1200px;
+		}
+	      #hero{
+		background-image: url('https://opengameart.org/sites/default/files/styles/thumbnail/public/DurrrSpaceShip_0.png');
+		height: 50px;
+		width: 50px;
+		background-size: contain;
+		position: absolute;
+		top: 700px ;
+		left: 550px ;
+		}
+	      .enemy{
+		background-image: url('https://vignette.wikia.nocookie.net/galaga/images/2/2b/BossGalagaSprite.png/revision/latest/scale-to-width-down/340?cb=20190331224414');
+		height: 41px;
+		width: 41px;
+		background-size: contain;
+		position: absolute;
+		top: 100px;
+		left: 550px;
+		}
+	      .shot{
+		background-image: url('https://art.pixilart.com/200442b9509d362.png');
+		height: 16px;
+		width: 10px;
+		background-size: contain;
+		
+		
+		}
+
+	</style>
+	</head>	
+        
+</html>
+
+
+
+
+
+<body>
+	<div id= "background">
+		<div id="hero"></div>
+		<div class= "enemy"></div>
+		<div class="shot"></div>
+	</div>
+
+	<script> 
+
+	var hero = {
+		top: 700,
+		left: 550
+		};
+
+	document.onkeydown = function(e){
+		console.log(e.keyCode);
+		if (e.keyCode == 37){
+			console.log("LEFT");
+			hero.left = hero.left - 15;
+			moveHero()
+		}
+		else if (e.keyCode == 39){
+			console.log("RIGHT");
+			hero.left = hero.left + 15;
+			moveHero()
+		}
+		else if (e.keyCode == 32){
+			console.log("FIRE");
+			
+		}
+
+	}	
+
+	function moveHero() {
+	document.getElementById("hero").style.left = hero.left + "px";
+	}
+	
+	
+
+	</script>
+</body>
+</html>

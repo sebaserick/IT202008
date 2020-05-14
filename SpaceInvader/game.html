@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <title>My Space Invaders - Login</title>
+        
+        
+	<style>
+              #background{
+	        Background-image: url('https://i.redd.it/4qmgdl4boj411.png');
+		height: 800px;
+		width: 1200px;
+		}
+	      #hero{
+		background-image: url('https://opengameart.org/sites/default/files/styles/thumbnail/public/DurrrSpaceShip_0.png');
+		height: 50px;
+		width: 50px;
+		background-size: contain;
+		position: absolute;
+		top: 700px ;
+		left: 550px ;
+		}
+	      .enemy{
+		background-image: url('https://vignette.wikia.nocookie.net/galaga/images/2/2b/BossGalagaSprite.png/revision/latest/scale-to-width-down/340?cb=20190331224414');
+		height: 41px;
+		width: 41px;
+		background-size: contain;
+		position: absolute;
+		top: 100px;
+		left: 550px;
+		}
+
+	      #missiles{
+		height: 800px;
+		width: 1200px;
+		position: absolute;
+		
+		}
+	      .missile{
+		background-image: url('https://toppng.com/public/uploads/thumbnail/alaga-galaga-missile-11562887504dfmxt6dqa0.png');
+		height: 16px;
+		width: 10px;
+		background-size: contain;
+		position: absolute;
+
+	      #enemies{
+		height: 800px;
+		width: 1200px;		
+		position:absolute; 	
+	
+		}
+	
+
+	</style>
+	</head>	
+        
+</html>
+
+
+
+
+
+<body>
+	<div id= "background">
+		<div id="hero"></div>
+		
+		<div id="missiles"></div>
+		<div id="enemies"></div>
+	</div>
+
+	<script> 
+
+		var hero = {
+			top: 700,
+			left: 550
+		};
+
+		var missiles=[];
+
+		var enemies=[
+		{ left: 200, top: 100 },
+            	{ left: 300, top: 100 },
+            	{ left: 400, top: 100 },
+            	{ left: 500, top: 100 },
+            	{ left: 600, top: 100 },
+            	{ left: 700, top: 100 },
+            	{ left: 800, top: 100 },
+            	{ left: 900, top: 100 },
+            	{ left: 200, top: 175 },
+            	{ left: 300, top: 175 },
+            	{ left: 400, top: 175 },
+            	{ left: 500, top: 175 },
+            	{ left: 600, top: 175 },
+            	{ left: 700, top: 175 },
+            	{ left: 800, top: 175 },
+            	{ left: 900, top: 175 }
+		
+		];
+
+	document.onkeydown = function(e){
+		console.log(e.keyCode);
+		if (e.keyCode === 37){
+			console.log("LEFT");
+			hero.left = hero.left - 15;
+			moveHero()
+		}
+		else if (e.keyCode === 39){
+			console.log("RIGHT");
+			hero.left = hero.left + 15;
+			moveHero()
+		}		
+		else if (e.keyCode === 32){
+			console.log("FIRE");
+			missiles.push({ 
+				left: hero.left + 15, 	
+				top: hero.top 
+			})
+
+                     	drawMissiles()
+		}
+
+	}
+
+	function moveHero() {
+		document.getElementById("hero").style.left = hero.left + "px";
+	}
+	
+
+	function drawMissiles() {
+        	    document.getElementById('missiles').innerHTML = ""
+           	 for(var missile = 0 ; missile < missiles.length ; missile++ ){
+			document.getElementById('missiles').innerHTML += `<div class='missile' style='left:${missiles[missile].left}px; top:${missiles[missile].top}px'></div>`;
+            }
+        }
+
+
+
+
+	function moveMissiles(){
+		for (var missile = 0; missile<missiles.length; missile=missile + 1){
+			missiles[missile].top = missiles[missile].top - 20;
+		}
+	}
+	
+	  function drawEnemies() {
+        	    document.getElementById('enemies').innerHTML = ""
+           	 for(var enemie = 0 ; enemie < enemies.length ; enemie++ ) {
+               		 document.getElementById('enemies').innerHTML += `<div class='enemy' style='left:${enemies[enemie].left}px; top:${enemies[enemie].top}px'></div>`;
+            }
+        }
+
+
+	   function moveEnemies() {
+            for(var enemie = 0 ; enemie < enemies.length ; enemie++ ) {
+                enemies[enemie].top = enemies[enemie].top + 1;
+            }
+        }
+
+	function hitDetection(){
+		  for (var enemy = 0; enemy < enemies.length; enemy++) {
+                for (var missile = 0; missile < missiles.length; missile++) {
+                    if ( 
+                        missiles[missile].left >= enemies[enemy].left  &&
+                        missiles[missile].left <= (enemies[enemy].left + 50)  &&
+                        missiles[missile].top <= (enemies[enemy].top + 50)  &&
+                        missiles[missile].top >= enemies[enemy].top
+                    ) {
+                        enemies.splice(enemy, 1);
+                        missiles.splice(missile, 1);
+                    }
+                }
+            }
+        }
+
+
+
+	function gameLoop(){
+		setTimeout(gameLoop, 100)
+		moveMissiles();
+		drawMissiles();
+		moveEnemies();
+		drawEnemies();
+		hitDetection();
+	}	
+	gameLoop();	
+
+	
+
+	</script>
+</body>
+</html>
+
