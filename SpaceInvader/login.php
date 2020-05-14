@@ -21,6 +21,9 @@
 <embed height="160" type="audio/mpeg" width="244" src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Music_for_Video/Komiku/Poupis_incredible_adventures_/Komiku_-_27_-_Tetros_Arcade_Cabinet.mp3"
 	 volume="60" loop="false" autostart="false" />
 
+<p>Click here for <a href= "https://web.njit.edu/~em288/Folder1/SpaceInvader/game.html"> "Normal Mode"</a>.</p>
+<p>Click here for <a href= "https://web.njit.edu/~em288/SpaceInvaders/SpaceInvader/login.php">"Hard Mode"</a>.</p>
+
 
         </body>
 </html>
