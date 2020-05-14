@@ -75,7 +75,23 @@
 		<div id="enemies"></div>
 	</div>
 
+	<audio src= "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Music_for_Video/Komiku/Poupis_incredible_adventures_/Komiku_-_27_-_Tetros_Arcade_Cabinet.mp3" id="bmg"></audio>
+	<button onclick= "pauseMusic()" type= "button"> Pause Music</button><br>		
+	<button onclick= "playMusic()" type= "button"> Play Music</button><br>
+
+
+
 	<script> 
+
+		var bmg = document.getElementById('bmg');
+		function playMusic(){
+			bmg.play();
+		}	
+		function pauseMusic(){
+			bmg.pause();
+		}		
+		
+
 
 		var hero = {
 			top: 700,
